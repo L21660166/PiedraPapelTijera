@@ -4,25 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra, Papel o Tijera</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .opciones {
-            margin: 20px;
-        }
-        .opciones button {
-            font-size: 20px;
-            padding: 10px 20px;
-            margin: 10px;
-        }
-        .resultado {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Piedra, Papel o Tijera</h1>
@@ -32,31 +14,8 @@
         <button onclick="jugar('tijera')">Tijera</button>
     </div>
     <div class="resultado" id="resultado"></div>
+    <div class="confeti" id="confeti"></div>
 
-    <script>
-        function jugar(eleccionUsuario) {
-            const opciones = ['piedra', 'papel', 'tijera'];
-            const eleccionComputadora = opciones[Math.floor(Math.random() * opciones.length)];
-            let resultado = '';
-
-            if (eleccionUsuario === eleccionComputadora) {
-                resultado = 'Empate';
-            } else if (
-                (eleccionUsuario === 'piedra' && eleccionComputadora === 'tijera') ||
-                (eleccionUsuario === 'papel' && eleccionComputadora === 'piedra') ||
-                (eleccionUsuario === 'tijera' && eleccionComputadora === 'papel')
-            ) {
-                resultado = '¡Ganaste!';
-            } else {
-                resultado = 'Perdiste';
-            }
-
-            document.getElementById('resultado').innerText = `
-                Tú: ${eleccionUsuario} 
-                Computadora: ${eleccionComputadora} 
-                Resultado: ${resultado}
-            `;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
