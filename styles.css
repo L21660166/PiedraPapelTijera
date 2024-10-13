@@ -104,3 +104,13 @@ h1 {
     50% { transform: translateY(20px); }
     100% { transform: translateY(0); }
 }
+@media screen and (max-width: 1024px) {
+            .card {
+                width: calc(50% - 40px);
+            }
+        }
+@media screen and (max-width: 768px) {
+            .card {
+                width: calc(100% - 40px);
+            }
+        }
